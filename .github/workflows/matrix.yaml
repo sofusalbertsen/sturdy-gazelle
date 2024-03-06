@@ -6,7 +6,7 @@ jobs:
     strategy:
       matrix:
         gradle: ["gradle:6"]
-        jdk: ["8", "9", "10","11"]
+        jdk: ["8", "11"]
     container:
       image: "${{ matrix.gradle }}-jdk${{ matrix.jdk }}"
 
