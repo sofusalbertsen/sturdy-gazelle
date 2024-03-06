@@ -5,8 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        gradle: ["gradle:6","gradle:5"]
-        jdk: ["8", "9", "10"]
+        gradle: ["gradle:6"]
+        jdk: ["8", "9", "10","11"]
     container:
       image: "${{ matrix.gradle }}-jdk${{ matrix.jdk }}"
 
