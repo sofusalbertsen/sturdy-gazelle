@@ -6,8 +6,12 @@ env: # Set the secret as an input
   GIT_COMMIT: ${{ github.sha }}
 jobs:
   Build:
+    strategy:
+      matrix:
+        container: ["gradle:6-jdk8", "gradle:6-jdk11"]
     runs-on: ubuntu-latest
-    container: gradle:6-jdk11
+    container:
+      image: ${{ matrix.container }} 
     steps:
       - name: Clone down repository
         uses: actions/checkout@v4       
