@@ -1,0 +1,13 @@
+name: show the contexts
+on: [workflow_dispatch]
+
+jobs:
+  contexts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: hej 
+        run: echo hello world
+      - name: Dump GitHub context
+        run: echo '${{ toJSON(github)}}'
+      - name: Dump GitHub context
+        run: echo '${{ toJSON(runner)}}'
